@@ -1,4 +1,4 @@
-'use client'
+ "use client"
 import Image from 'next/image'
 import Logo from '../../../public/vercel.svg'
 import { usePostQuery } from '@/redux/services/postApi'
