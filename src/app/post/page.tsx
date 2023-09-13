@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import Logo from '../../../public/vercel.svg'
+import Logo from '../../../public/delete.svg'
 import { usePostQuery,useDeletePostMutation } from '@/redux/services/postApi'
 import {useRouter} from 'next/navigation'
 import UpdatePost from '../UpdatePost/page'
