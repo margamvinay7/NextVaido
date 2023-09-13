@@ -7,20 +7,25 @@ export default function Sidebar(){
     
     const navLinks=[
         { name:"Home",
-        link:'/posts'
+        link:'/posts',
+        id:1
 
         },
         { name:"profile",
-          link:'/profile/id'
+          link:'/profile/id',
+          id:2
   
           },
           { name:"createPost",
-          link:'/CreatePost'
+          link:'/CreatePost',
+
+          id:3
   
           },
   
           {name:"logout",
-          link:"/logout"
+          link:"/logout",
+          id:4
       }
       ]
 
@@ -30,9 +35,9 @@ export default function Sidebar(){
             <div className='flex bg-gradient-to-tr from-green-700 to-lime-400 justify-center text-8xl '>Vaido</div>
   <ul className='list-none mt-5'>
         {navLinks.map((nav) => (
-          <Link href={`${nav?.link}`}>
+          <Link href={`${nav?.link}`} key={nav.id}>
                 <li
-                  key={nav.name}
+                  key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] hover:bg-purple-500/70 list-none rounded-lg p-2 flex justify-center m-2 bg-cyan-800   ${
                     active === nav.name ? "text-white" : "text-secondary"
                   }`}

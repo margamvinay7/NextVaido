@@ -1,8 +1,9 @@
 "use client"
 import { useState } from "react";
 import Link from "next/link"
-import Image from "next/image";
-import Menu from '../../../public/menu.svg'
+
+import  Image  from "next/image";
+import Menu from '@/public/menu.svg'
 export  default function Navbar(){
     const [active,setActive]=useState("");
     const [toggle, setToggle] = useState(false);

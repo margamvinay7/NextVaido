@@ -1,13 +1,13 @@
 'use client'
 import Image from 'next/image'
-import Logo from '../../../public/delete.svg'
+import Logo from '@/public/vercel.svg'
 import { usePostQuery,useDeletePostMutation } from '@/redux/services/postApi'
 import {useRouter} from 'next/navigation'
 import UpdatePost from '../UpdatePost/page'
 import { useDispatch } from 'react-redux'
 import { postActions } from '@/redux/features/postSlice'
-import Delete from '../../../public/delete.svg'
-import Edit from '../../../public/edit.png'
+import Delete from '@/public/delete.svg'
+import Edit from '@/public/edit.png'
 export default function Post({post}:any){
     const [deletePost]=useDeletePostMutation();
     const router=useRouter()
@@ -26,7 +26,7 @@ export default function Post({post}:any){
         
     }
     const handleEdit=async(result:any)=>{
-       await  dispatch(postActions.updatePost(result));
+         dispatch(postActions.updatePost(result));
 
        router.push('/UpdatePost')
         
@@ -36,7 +36,7 @@ export default function Post({post}:any){
     }
     
     return(
-        <article className="sm:w-[60vw]  w-[90vw] rounded-2xl p-2 h-[80vh] bg-slate-700 ">
+        <div className="sm:w-[60vw]  w-[90vw] rounded-2xl p-2 h-[80vh] bg-slate-700 ">
             <div className='bg-slate-600 p-2 flex flex-row gap-x-2 items-center justify-start rounded-t-xl relative'>
             <Image src={Logo} alt="image check" className=' w-10 h-10 rounded-full bg-slate-200'/>
              <div>{result?.username}</div>
@@ -60,7 +60,7 @@ export default function Post({post}:any){
         <input type='text' placeholder='comment on post' className='w-[80%] h-10  rounded-lg bg-orange-100 text-cyan-400'/>
 
         </div>
-    </article>
+    </div>
 
     )
 }

@@ -50,13 +50,13 @@ export default function SignupPage() {
         }
     }
 
-    useEffect(() => {
-        if(user.email.length > 0 && user.password.length > 0 && user.username.length > 0) {
-            setButtonDisabled(false);
-        } else {
-            setButtonDisabled(true);
-        }
-    }, [user]);
+    // useEffect(() => {
+    //     if(user.email.length > 0 && user.password.length > 0 && user.username.length > 0) {
+    //         setButtonDisabled(false);
+    //     } else {
+    //         setButtonDisabled(true);
+    //     }
+    // }, [email,image,username,password]);
 
 
     return (
@@ -94,7 +94,7 @@ export default function SignupPage() {
             />
             <button
             onClick={onSignup}
-            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">{buttonDisabled ? "No signup" : "Signup"}</button>
+            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">SignUp</button>
             <Link href="/login">Visit login page</Link>
             <Link href="/profile">Visit profile page</Link>
         </div>

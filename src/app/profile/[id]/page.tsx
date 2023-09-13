@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Sidebar from "@/app/components/Sidebar"
 import Post from "@/app/post/page"
 import { useUserPostsQuery } from "@/redux/services/postApi"
-export default  function(){
+export default  function Profile(){
 let userId:any=localStorage.getItem("userId")
 let username:any=localStorage.getItem("username")
 console.log("userId in profile",userId,username)
@@ -28,7 +28,7 @@ console.log("userdata",result)
         </section>
         <section className=" md:left-[20vw] p-5 w-[100vw] sm:w-[100vw]  relative  md:w-[80vw]  bg-slate-800 sm:min-h-[100vh] min-h-[100vh] flex flex-col gap-2  justify-center items-center ">
         {result?.map((post:any)=>(
-            <Post post={post}/>
+            <Post post={post} key={post._id}/>
         ))}
         </section>
 

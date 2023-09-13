@@ -1,6 +1,6 @@
  "use client"
 import Image from 'next/image'
-import Logo from '../../../public/delete.svg'
+import Logo from '@/public/vercel.svg'
 import { usePostQuery } from '@/redux/services/postApi'
 export default function PostDetails({params:{id}}:any){
     
@@ -9,7 +9,7 @@ export default function PostDetails({params:{id}}:any){
     console.log(result)
     
     return(
-        <article className="sm:w-[60vw]  w-[90vw] rounded-2xl p-2 h-[80vh] bg-slate-700 ">
+        <div className="sm:w-[60vw]  w-[90vw] rounded-2xl p-2 h-[80vh] bg-slate-700 ">
             <div className='bg-slate-600 p-2 flex flex-row gap-x-2 items-center justify-start rounded-t-xl'>
             <Image src={Logo} alt="image check" className=' w-10 h-10 rounded-full bg-slate-200'/>
              <div>{result?.username}</div>
@@ -30,7 +30,7 @@ export default function PostDetails({params:{id}}:any){
         <input type='text' placeholder='comment on post' className='w-[80%] h-10  rounded-lg bg-orange-100 text-cyan-400'/>
 
         </div>
-    </article>
+    </div>
 
     )
 }

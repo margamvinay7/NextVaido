@@ -35,7 +35,7 @@ export default function CreatePost(){
     }
     return(
         <>
-            <aside className="md:w-[20vw] sm:hidden hidden md:flex  left-0 bg-slate-300 h-[100vh] fixed"><Sidebar/></aside>  
+            <div className="md:w-[20vw] sm:hidden hidden md:flex  left-0 bg-slate-300 h-[100vh] fixed"><Sidebar/></div>  
         
         <div className="login">
         <div className="flex flex-col gap-2 items-center justify-center h-[70vh] py-2 bg-slate-900 w-[50vw] rounded-xl ">
