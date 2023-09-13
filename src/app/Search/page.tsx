@@ -1,3 +1,4 @@
+"use client"
 import { useSearchPostsQuery } from "@/redux/services/postApi"
 import { useState } from "react"
 export default function Search(){
