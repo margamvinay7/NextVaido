@@ -61,8 +61,8 @@ export default function SignupPage() {
 
     return (
        <div className="login">
-    <div className="flex flex-col  items-center justify-center h-[70vh] py-2 bg-slate-900 sm:w-[50vw]  w-[100vw] rounded-xl gap-1">
-        <h1>{loading ? "Processing" : "Signup"}</h1>
+    <div className="flex flex-col  items-center justify-center h-[70vh] py-2 bg-slate-900 sm:w-[50vw]  w-[90vw] rounded-xl gap-1">
+        <h1 className="text-white">{loading ? "Processing" : "Signup"}</h1>
         <hr />
         
         <input 
@@ -82,9 +82,9 @@ export default function SignupPage() {
             onChange={(e) => setEmail( e.target.value)}
             placeholder="email"
             />
-            
+          <div className="w-[80%]">  
             <FileBase type="file" multiple={false} onDone={({base64}:any)=>setImage(base64)}/>
-            
+            </div>
         <input 
         className="p-2 border text-center placeholder-slate-950 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id="password"
@@ -95,9 +95,9 @@ export default function SignupPage() {
             />
             <button
             onClick={onSignup}
-            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">SignUp</button>
-            <Link href="/login">Visit login page</Link>
-            <Link href="/profile">Visit profile page</Link>
+            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none  focus:border-gray-600 text-white">SignUp</button>
+            <Link href="/login" className="text-white">Visit login page</Link>
+            <Link href="/profile" className="text-white">Visit profile page</Link>
         </div>
         </div>
         

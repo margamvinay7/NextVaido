@@ -52,22 +52,22 @@ export default function LoginPage() {
 
     return (
         <div className="login">
-    <div className="flex flex-col  items-center justify-center bg-slate-900 h-[60vh] sm:w-[50vw] py-2 rounded-xl w-[100vw]">
-        <h1>{loading ? "Processing" : "Login"}</h1>
+    <div className="flex flex-col  items-center justify-center bg-slate-900 h-[60vh] sm:w-[50vw] py-2 rounded-xl w-[90vw]">
+        <h1 className="text-white mb-2">{loading ? "Processing" : "Login"}</h1>
         <hr />
         
-        <label htmlFor="email">email</label> 
+         
         <input 
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black "
+        className="p-2 border border-gray-300 rounded-lg text-center placeholder-black mb-4 focus:outline-none placeholder- focus:border-gray-600 text-black "
             id="email"
             type="text"
             value={user.email}
             onChange={(e) => setUser({...user, email: e.target.value})}
             placeholder="email"
             />
-        <label htmlFor="password">password</label>
+       
         <input 
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="p-2 border placeholder-black text-center border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id="password"
             type="password"
             value={user.password}
@@ -76,8 +76,8 @@ export default function LoginPage() {
             />
             <button
             onClick={onLogin}
-            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">Login here</button>
-            <Link href="/signup">Visit Signup page</Link>
+            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-white">Login here</button>
+            <Link href="/signup" className="text-white">Visit Signup page</Link>
         </div>
         </div>
     )

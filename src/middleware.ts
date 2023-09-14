@@ -33,7 +33,7 @@ console.log("middleware")
 export const config = {
   matcher: [
     '/',
-    '/CreatedPost',
+    '/CreatePost',
     '/UpdatePost',
     '/posts',
     '/profile/:id',

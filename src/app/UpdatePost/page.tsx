@@ -35,15 +35,15 @@ export default function UpdatePost(){
     }
     return(
         <div className="login">
-        <div className="flex flex-col gap-2 items-center justify-center h-[70vh] py-2 bg-slate-900 w-[50vw] rounded-xl ">
-            <h1>Update post</h1>
-            <input className="w-[80%] h-10 rounded-sm placeholder-shown:border-gray-500 bg-black text-center " placeholder="Title of post" type="text" value={title} onChange={(e)=>setTitle(e.target.value)}></input>
+        <div className="flex flex-col gap-2 items-center justify-center h-[70vh] py-2 bg-slate-900  sm:w-[50vw]  w-[90vw] rounded-xl ">
+            <h1 className='text-white'>Update post</h1>
+            <input className="w-[80%]  text-white h-10 rounded-sm placeholder-shown:border-gray-500 bg-black text-center placeholder-white " placeholder="Title of post" type="text" value={title} onChange={(e)=>setTitle(e.target.value)}></input>
            
-            <textarea className="w-[80%] h-20 rounded-sm placeholder-shown:border-gray-500 bg-black text-center "   placeholder=" post" value={post} onChange={(e)=>setPost(e.target.value)} ></textarea>
+            <textarea className="w-[80%] placeholder-white h-20 rounded-sm placeholder-shown:border-gray-500 bg-black text-center  text-white"   placeholder=" post" value={post} onChange={(e)=>setPost(e.target.value)} ></textarea>
             
-      <div className='w-[80%]'>     
+      <div className='w-[80%] flex justify-center flex-col'>     
     <FileBase type="file" multiple={false} onDone={({base64}:any)=>setImage(base64)}   />
-    <button onClick={onSubmit}>submit</button>
+    <button  className='p-2 text-white m-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600' onClick={onSubmit}>submit</button>
     </div> 
             
         </div>
