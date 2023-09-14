@@ -7,8 +7,8 @@ import {connect} from '@/dbConfig/dbconfig'
 const handler=NextAuth({
     providers:[
         GoogleProvider({
-            clientId:"84128395589-u2041ki71h00m725iq43a5om4cqogig2.apps.googleusercontent.com" ,
-            clientSecret:"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"
+            clientId:"" ,
+            clientSecret:""
         })
     ],
     callbacks:{
