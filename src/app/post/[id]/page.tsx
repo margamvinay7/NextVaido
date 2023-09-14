@@ -3,9 +3,10 @@ import Image from 'next/image'
 import Logo from '@/public/vercel.svg'
 import { usePostQuery } from '@/redux/services/postApi'
 export default function PostDetails({params:{id}}:any){
-    
+    console.log(" id post",id)
     const {data}:any=usePostQuery(id)
     const result=data?.postData
+    console.log(result)
     
     
     return(

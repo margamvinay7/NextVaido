@@ -4,12 +4,13 @@ import Posts from '@/models/posts'
 
 connect();
 
-export async function GET({params:{id}}:any){
-    console.log("entered in get search routes",id)
+
+
+export async function GET(request:NextRequest,{params:{id}}:any){
+    console.log("entered in get id  search routes",id)
     try{
-        await id
-        const title=new RegExp(id,"i");
-        const postData=await Posts.find({title});
+         const title= new RegExp(id,"i")
+        const postData=await Posts.find({title}).sort({_id:-1})
         return NextResponse.json({postData});
     }
     catch(err){
