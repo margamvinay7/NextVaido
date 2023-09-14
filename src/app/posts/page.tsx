@@ -7,7 +7,7 @@ import Search from '../Search/page'
 export default function Posts(){
     const [posts,setPosts]=useState<any>([])
     const [postData,setPostData]=useState<any>([])
-    const [search,setSearch]=useState<string>("search")
+    const [search,setSearch]=useState<string>("")
     const [searched,setSearched]=useState<boolean>(false)
     const handleSearch=()=>{
         console.log("clicked")
