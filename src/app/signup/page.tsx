@@ -61,31 +61,32 @@ export default function SignupPage() {
 
     return (
        <div className="login">
-    <div className="flex flex-col  items-center justify-center h-[70vh] py-2 bg-slate-900 w-[50vw] rounded-xl">
+    <div className="flex flex-col  items-center justify-center h-[70vh] py-2 bg-slate-900 sm:w-[50vw]  w-[100vw] rounded-xl gap-1">
         <h1>{loading ? "Processing" : "Signup"}</h1>
         <hr />
-        <label htmlFor="username">username</label>
+        
         <input 
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="p-2 border text-center border-gray-300 rounded-lg mb-4 placeholder-slate-950 focus:outline-none focus:border-gray-600 text-black"
             id="username"
             type="text"
             value={username}
             onChange={(e) => setUsername( e.target.value)}
             placeholder="username"
             />
-        <label htmlFor="email">email</label>
+        
         <input 
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="p-2 border text-center placeholder-slate-950 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id="email"
             type="text"
             value={email}
             onChange={(e) => setEmail( e.target.value)}
             placeholder="email"
             />
+            
             <FileBase type="file" multiple={false} onDone={({base64}:any)=>setImage(base64)}/>
-        <label htmlFor="password">password</label>
+            
         <input 
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="p-2 border text-center placeholder-slate-950 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
             id="password"
             type="password"
             value={password}

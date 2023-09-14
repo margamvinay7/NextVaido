@@ -52,13 +52,13 @@ export default function LoginPage() {
 
     return (
         <div className="login">
-    <div className="flex flex-col  items-center justify-center bg-slate-900 h-[60vh] w-[50vw] py-2 rounded-xl">
+    <div className="flex flex-col  items-center justify-center bg-slate-900 h-[60vh] sm:w-[50vw] py-2 rounded-xl w-[100vw]">
         <h1>{loading ? "Processing" : "Login"}</h1>
         <hr />
         
-        <label htmlFor="email">email</label>
+        <label htmlFor="email">email</label> 
         <input 
-        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black "
             id="email"
             type="text"
             value={user.email}

@@ -72,9 +72,9 @@ export default function CreatePost() {
   const [title, setTitle] = useState("");
   const [post, setPost] = useState("");
   const [image, setImage] = useState("");
-  const createPostMutation:any = useAddPostMutation();
+  const [createPostMutation]:any = useAddPostMutation();
   const userId = useSelector((state:any) => state.post.id);
-
+ console.log("createPost",userId)
   const postData = {
     userId,
     title,
