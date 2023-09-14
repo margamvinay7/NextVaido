@@ -4,10 +4,11 @@ import Posts from '@/models/posts'
 
 connect();
 
-export async function GET(request:NextRequest,{params:{search}}:any){
-    console.log("entered in get search routes",search)
+export async function GET({params:{id}}:any){
+    console.log("entered in get search routes",id)
     try{
-        const title=new RegExp(search,"i");
+        await id
+        const title=new RegExp(id,"i");
         const postData=await Posts.find({title});
         return NextResponse.json({postData});
     }

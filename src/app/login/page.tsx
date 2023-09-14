@@ -4,7 +4,8 @@ import React, {useEffect} from "react";
 import {useRouter} from "next/navigation";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-
+import { useDispatch } from "react-redux";
+import { postActions } from "@/redux/features/postSlice";
 
 
 
@@ -16,6 +17,7 @@ export default function LoginPage() {
         password: "",
        
     })
+    const dispatch=useDispatch();
     const [buttonDisabled, setButtonDisabled] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
 
@@ -27,6 +29,7 @@ export default function LoginPage() {
             const resData=response.data.tokenData
             console.log("Login success", resData);
             localStorage.setItem("userId",resData.id)
+            dispatch(postActions.userId(resData.id))
             localStorage.setItem("username",resData.username)
 
             toast.success("Login  toast success");

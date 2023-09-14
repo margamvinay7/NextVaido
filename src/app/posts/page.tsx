@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import Post from '../post/page'
 import { useEffect, useState } from 'react'
 import { usePostsQuery,useSearchPostsQuery } from '@/redux/services/postApi'
@@ -7,7 +7,7 @@ import Search from '../Search/page'
 export default function Posts(){
     const [posts,setPosts]=useState<any>([])
     const [postData,setPostData]=useState<any>([])
-    const [search,setSearch]=useState<string>("")
+    const [search,setSearch]=useState<string>("search")
     const [searched,setSearched]=useState<boolean>(false)
     const handleSearch=()=>{
         console.log("clicked")

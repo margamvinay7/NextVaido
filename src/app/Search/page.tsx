@@ -11,7 +11,7 @@ export default function Search(){
       
         const {data}:any  =useSearchPostsQuery(search)
         const result:any=data?.postData 
-      console.log("search data",result)
+      console.log("search data")
   
     return(
 <section className=' flex flex-row w-[100vw]'>

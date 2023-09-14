@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import Image from 'next/image'
 import Logo from '@/public/vercel.svg'
 import { usePostQuery,useDeletePostMutation } from '@/redux/services/postApi'
@@ -22,7 +22,7 @@ export default function Post({post}:any){
     const handleDelete=async(id:any)=>{
         console.log("handleDelete",id)
          const result=   await deletePost(id);
-         console.log("deletedPost",result)
+         
         
     }
     const handleEdit=async(result:any)=>{
@@ -38,7 +38,7 @@ export default function Post({post}:any){
     return(
         <div className="sm:w-[60vw]  w-[90vw] rounded-2xl p-2 h-[80vh] bg-slate-700 ">
             <div className='bg-slate-600 p-2 flex flex-row gap-x-2 items-center justify-start rounded-t-xl relative'>
-            <Image src={Logo} alt="image check" className=' w-10 h-10 rounded-full bg-slate-200'/>
+            <Image src={Logo|| " "} alt="image check" className=' w-10 h-10 rounded-full bg-slate-200'/>
              <div>{result?.username}</div>
             <div>{result?.title}</div> 
             <div>{createdAtDate}</div>
@@ -46,14 +46,14 @@ export default function Post({post}:any){
             <div className='w-10 rounded-full h-10 flex items-center justify-center bg-white absolute right-5 cursor-pointer' onClick={()=>handleDelete(result._id)}  ><Image src={Delete} alt='edit' fill={true} /></div>
             </div>
         { result?.post && <><div className="bg-slate-400 h-[60%] mb-1 relative">
-           {result?.image && <Image src={result.image||Logo} fill={true} alt="image check" style={{objectFit:"cover"}}  />}    
+           {result?.image && <Image src={result?.image||Logo} fill={true} alt="image check" style={{objectFit:"cover"}}  />}    
         </div>
          <div className='h-[20%] overflow-auto bg-slate-400 rounded-b-xl'><div className=' bg-teal-900 text-center'>post</div><hr/><div className='p-1'>{result.post}</div></div>
          </>
         }
         
         {!result?.post && <div className="bg-slate-400 h-[80%] rounded-b-xl relative">
-             <Image src={result.image||Logo} fill={true} alt="image check" style={{objectFit:"contain"}}  />   
+             <Image src={result?.image||Logo} fill={true} alt="image check" style={{objectFit:"contain"}}  />   
         </div>}
         <div className='flex flex-row m-4 gap-x-5'>
         <div className=' w-10 h-10 rounded-full bg-yellow-700 flex justify-center items-center'>like</div>
