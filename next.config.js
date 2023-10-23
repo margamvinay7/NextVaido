@@ -18,7 +18,7 @@ const nextConfig = {
             },
         ],
         domains: [
-            'https://vaido.vercel.app/',
+            'http://localhost:3000/',
           ],
     },
 }

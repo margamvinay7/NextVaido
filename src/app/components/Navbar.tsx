@@ -27,7 +27,7 @@ export  default function Navbar(){
     }
     ]
     return(
-        <nav className="flex md:hidden  flex-col gap-2 h-14   sticky  top-0 z-10 bg-red-500 " >
+        <nav className="flex md:hidden  flex-col gap-2 h-14   sticky  top-0 z-10 bg-black " >
          <div className='flex w-full p-2  flex-row justify-end items-center'>
             <div className=" text-2xl">Vaido</div>
           <div

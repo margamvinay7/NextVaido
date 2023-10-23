@@ -17,7 +17,7 @@ export  async function POST(request:NextRequest){
         if(!user){
             return NextResponse.json({error:"user does not exist"},{status:400})
         }
-        console.log("user exists");
+        console.log("user exist ok");
         
         const validPassword=await bcryptjs.compare(password,user.password)
         if(!validPassword){
@@ -29,7 +29,8 @@ export  async function POST(request:NextRequest){
         const tokenData={
             id:user._id,
             username:user.username,
-            email:user.email
+            email:user.email,
+           
         }
 const Token_SECRET="ueywyt29383ujfhj@9ririeui74987h5hkfkji784kjkr"
         const token= jwt.sign(tokenData,Token_SECRET,{expiresIn:'1d'})

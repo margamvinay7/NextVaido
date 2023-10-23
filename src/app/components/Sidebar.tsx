@@ -30,15 +30,15 @@ export default function Sidebar(){
       ]
 
     return(
-        <div className='flex flex-col w-[20vw]'>
+        <div className='flex flex-col w-[20vw] bg-black'>
 
-            <div className='flex bg-gradient-to-tr from-green-700 to-lime-400 justify-center text-8xl '>Vaido</div>
+            <div className='flex bg-black justify-center text-8xl '>Vaido</div>
   <ul className='list-none mt-5'>
         {navLinks.map((nav) => (
           <Link href={`${nav?.link}`} key={nav.id}>
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] hover:bg-purple-500/70 list-none rounded-lg p-2 flex justify-center m-2 bg-cyan-800   ${
+                  className={`font-poppins font-medium cursor-pointer text-[16px]  list-none rounded-lg p-2 flex justify-center m-2 outline outline-white outline-1 hover:bg-zinc-700 ${
                     active === nav.name ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {

@@ -39,7 +39,7 @@ export default function Logout() {
             <aside key={1} className="md:w-[20vw] sm:hidden hidden md:flex  left-0 bg-slate-300 h-[100vh] fixed"><Sidebar/></aside>  
        
         <div className="login">
-    <div className="flex flex-col  items-center justify-center bg-slate-900 h-[60vh] sm:w-[50vw] w-[90vw] py-2 rounded-xl">
+    <div className="flex flex-col  items-center justify-center oultine outline-white bg-slate-900 h-[60vh] sm:w-[50vw] w-[90vw] py-2 rounded-xl">
         <div className="text-white">Logout</div>
         
         

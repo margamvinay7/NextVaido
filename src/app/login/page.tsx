@@ -29,7 +29,9 @@ export default function LoginPage() {
             const resData=response.data.tokenData
             console.log("Login success", resData);
             localStorage.setItem("userId",resData.id)
+            console.log("before user data set")
             dispatch(postActions.userId(resData.id))
+           
             localStorage.setItem("username",resData.username)
 
             toast.success("Login  toast success");
@@ -52,7 +54,7 @@ export default function LoginPage() {
 
     return (
         <div className="login">
-    <div className="flex flex-col  items-center justify-center bg-slate-900 h-[60vh] sm:w-[50vw] py-2 rounded-xl w-[90vw]">
+    <div className="flex flex-col outline outline-white items-center justify-center bg-slate-900 h-[60vh] sm:w-[50vw] py-2 rounded-xl w-[90vw]">
         <h1 className="text-white mb-2">{loading ? "Processing" : "Login"}</h1>
         <hr />
         

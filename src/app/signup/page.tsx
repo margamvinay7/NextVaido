@@ -11,14 +11,7 @@ import FileBase from 'react-file-base64'
 
 export default function SignupPage() {
     const router = useRouter();
-    // const [image, setImage] = React.useState("");
-    // const [user, setUser] = React.useState({
-    //     email: "",
-    //     password: "",
-    //     username: "",
-    //    image
-    // })
-    // console.log(image)
+    
     const [email, setEmail] = React.useState("");
     const [image, setImage] = React.useState("");
     const [password, setPassword] = React.useState("");
@@ -50,18 +43,12 @@ export default function SignupPage() {
         }
     }
 
-    // useEffect(() => {
-    //     if(user.email.length > 0 && user.password.length > 0 && user.username.length > 0) {
-    //         setButtonDisabled(false);
-    //     } else {
-    //         setButtonDisabled(true);
-    //     }
-    // }, [email,image,username,password]);
+    
 
 
     return (
-       <div className="login">
-    <div className="flex flex-col  items-center justify-center h-[70vh] py-2 bg-slate-900 sm:w-[50vw]  w-[90vw] rounded-xl gap-1">
+       <div className="login ">
+    <div className="flex flex-col outline oultine-white  items-center justify-center h-[70vh] py-2 bg-slate-900 sm:w-[50vw]  w-[90vw] rounded-xl gap-1">
         <h1 className="text-white">{loading ? "Processing" : "Signup"}</h1>
         <hr />
         
@@ -82,7 +69,7 @@ export default function SignupPage() {
             onChange={(e) => setEmail( e.target.value)}
             placeholder="email"
             />
-          <div className="w-[80%]">  
+          <div className="w-[60%] mb-1 ">  
             <FileBase type="file" multiple={false} onDone={({base64}:any)=>setImage(base64)}/>
             </div>
         <input 
