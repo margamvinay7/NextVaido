@@ -103,8 +103,8 @@ export default function CreatePost() {
         <Sidebar />
       </div>
 
-      <div className="login">
-        <div className="flex flex-col gap-2 items-center justify-center h-[70vh] py-2 bg-slate-900  sm:w-[50vw]  w-[90vw] rounded-xl">
+      <div className="login ">
+        <div className="flex flex-col gap-2 items-center  justify-center h-[70vh] py-2 bg-slate-900  sm:w-[50vw]  w-[90vw] rounded-xl">
           <h1 className='text-white'>CREATE POST</h1>
           <input
             className="w-[80%] text-white h-10 rounded-sm placeholder-shown:border-gray-500 placeholder-white bg-black text-center"

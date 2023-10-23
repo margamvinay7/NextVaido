@@ -29,7 +29,7 @@ export  default function Navbar(){
     return(
         <nav className="flex md:hidden  flex-col gap-2 h-14   sticky  top-0 z-10 bg-black " >
          <div className='flex w-full p-2  flex-row justify-end items-center'>
-            <div className=" text-2xl">Vaido</div>
+            <div className=" text-2xl text-white">Vaido</div>
           <div
            className='pe-5  object-contain flex flex-1 justify-end cursor-pointer items-center'
            onClick={() => setToggle(!toggle)}

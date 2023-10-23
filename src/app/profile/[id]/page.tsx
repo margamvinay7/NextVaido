@@ -32,10 +32,10 @@ console.log("usersPostdata",result?.title)
            <div className="sm:w-28 sm:h-28 w-20 h-20 rounded-full  bg-slate-700 flex justify-center items-center ">
            <Image src={userd?.[0]?.image} width={60}  height={60} alt="image check"  />
            </div>
-           <div className="sm:text-[50px] text-[20px]">{username}</div>
+           <div className="sm:text-[50px] text-[20px] text-white">{username}</div>
             
         </section>
-        <div className="outline outline-1 md:hidden bg-black oultine-white m-1  w-full md:w-[80vw]  h-8 p-1 text-center ">
+        <div className="outline outline-1 md:hidden text-white bg-black oultine-white m-1  w-full md:w-[80vw]  h-8 p-1 text-center ">
         posts  
     </div>
         

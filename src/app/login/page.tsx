@@ -54,7 +54,7 @@ export default function LoginPage() {
 
     return (
         <div className="login">
-    <div className="flex flex-col outline outline-white items-center justify-center bg-slate-900 h-[60vh] sm:w-[50vw] py-2 rounded-xl w-[90vw]">
+    <div className="flex flex-col  outline outline-white items-center justify-center bg-slate-900 h-[60vh] sm:w-[50vw] py-2 rounded-xl w-[90vw]">
         <h1 className="text-white mb-2">{loading ? "Processing" : "Login"}</h1>
         <hr />
         
