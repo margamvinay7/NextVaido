@@ -5,7 +5,7 @@ import posts from '@/type'
 export const postsApi = createApi({
    
     reducerPath: "poststsApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/api/" }),
+    baseQuery: fetchBaseQuery({ baseUrl: "https://vaido.vercel.app/api/" }),
     tagTypes: ['posts'],
     endpoints: (builder) => ({
         posts: builder.query<posts[], void>({
