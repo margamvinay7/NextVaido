@@ -7,7 +7,7 @@ import UpdatePost from '../UpdatePost/page'
 import { useDispatch } from 'react-redux'
 import { postActions } from '@/redux/features/postSlice'
 import Delete from '@/public/delete1.jpg'
-
+import {  FaTrashCan,FaPenToSquare,FaThumbsUp} from "react-icons/fa6";
 import Edit from '@/public/edit.jpg'
 export default function Post({post}:any){
     const [deletePost]=useDeletePostMutation();
@@ -43,8 +43,8 @@ export default function Post({post}:any){
              <div>{result?.username}</div>
             <div>{result?.title}</div> 
             <div>{createdAtDate}</div>
-            <div className='w-10 rounded-full h-10 flex items-center justify-center bg-white/30  absolute right-16 cursor-pointer' onClick={()=>handleEdit(post)}  ><Image src={Edit} alt="delete" fill={true}  /></div>
-            <div className='w-10 rounded-full h-10 flex items-center justify-center bg-white/30  absolute right-5 cursor-pointer' onClick={()=>handleDelete(result._id)}  ><Image src={Delete} alt='edit' fill={true} /></div>
+            <div className='w-10 rounded-full h-10 flex items-center justify-center hover:bg-slate-400   absolute right-16 cursor-pointer' onClick={()=>handleEdit(post)}  >< FaPenToSquare /></div>
+            <div className='w-10 rounded-full h-10 flex items-center justify-center hover:bg-slate-400  absolute right-5 cursor-pointer' onClick={()=>handleDelete(result._id)}  ><FaTrashCan/></div>
             </div>
         { result?.post && <><div className=" h-[75%] mb-1 relative">
            {result?.image && <Image src={result?.image} fill={true} alt="image check" style={{objectFit:"cover"}}  />}    
@@ -56,9 +56,9 @@ export default function Post({post}:any){
         {!result?.post && <div className="bg-slate-400 h-[80%] rounded-b-xl relative">
              <Image src={result?.image||Logo} fill={true} alt="image check" style={{objectFit:"contain"}}  />   
         </div>}
-        <div className='flex flex-row m-4 gap-x-5'>
-        <div className=' w-10 h-10 rounded-full bg-yellow-700 flex justify-center items-center'>like</div>
-        <input type='text' placeholder='comment on post' className='w-[80%] h-10  rounded-lg bg-orange-100 text-cyan-400'/>
+        <div className='flex flex-row m-4 gap-x-5 bg-white relative'>
+        <div className='w-10 rounded-full h-10 flex items-center  left-2 justify-center hover:bg-slate-400  absolute right-5 cursor-pointer' onClick={()=>handleDelete(result._id)}  ><FaThumbsUp/></div>
+        <input type='text' placeholder='comment on post' className='w-[80%] h-10 absolute left-16 text-center rounded-lg bg-orange-100 text-black'/>
 
         </div>
     </div>

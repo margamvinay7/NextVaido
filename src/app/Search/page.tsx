@@ -16,7 +16,7 @@ export default function Search(){
     return(
 <section className=' flex flex-row w-[100vw]'>
             <input type='text' onChange={(e)=>setSearch(e.target.value)} className=' md:hidden h-12  border-solid text-black border-slate-900 border-2 rounded-lg w-[90vw]' placeholder='Search post by title' />
-           <button className='bg-blue-600 w-[20vw]' onClick={handleSearch}>search</button>
+           <button className=' ' onClick={handleSearch}>search</button>
            </section>
     )
 }
