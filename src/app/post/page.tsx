@@ -57,7 +57,7 @@ export default function Post({post}:any){
              <Image src={result?.image||Logo} fill={true} alt="image check" style={{objectFit:"contain"}}  />   
         </div>}
         <div className='flex flex-row m-4 gap-x-5 bg-white relative'>
-        <div className='w-10 rounded-full h-10 flex items-center  left-2 justify-center hover:bg-slate-400  absolute right-5 cursor-pointer' onClick={()=>handleDelete(result._id)}  ><FaThumbsUp/></div>
+        <div className='w-10 rounded-full h-10 flex items-center  left-2 justify-center hover:bg-slate-400  absolute right-5 cursor-pointer'  ><FaThumbsUp/></div>
         <input type='text' placeholder='comment on post' className='w-[80%] h-10 absolute left-16 text-center rounded-lg bg-orange-100 text-black'/>
 
         </div>
