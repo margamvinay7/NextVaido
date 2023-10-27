@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { usePostsQuery,useSearchPostsQuery } from '@/redux/services/postApi'
 import Sidebar from '../components/Sidebar'
 import Search from '../Search/page'
+import { BsSearch } from "react-icons/bs";
 export default function Posts(){
     const [posts,setPosts]=useState<any>([])
     const [postData,setPostData]=useState<any>([])
@@ -40,7 +41,7 @@ console.log("postData search",postData)
          <section className=' flex flex-row md:h-12 w-[100vw] '>
            
            <input type='text' onChange={(e)=>setSearch(e.target.value)} className='  h-12  border-solid text-center text-black border-slate-900 border-2 rounded-lg w-[90vw] md:w-[70vw] md:absolute md:left-[20vw]' placeholder='Search post by title' />
-           <button className='bg-blue-600 w-[10vw] md:w-[10vw] md:h-12 md:absolute md:right-0' onClick={handleSearch}>search</button>
+           <button className='hover:bg-slate-400 w-[10vw] md:w-[10vw] md:h-12 md:absolute md:right-0' onClick={handleSearch}><BsSearch/></button>
     </section>
         <section   className=" md:left-[20vw] p-5 w-[100vw] sm:w-[100vw]  relative  md:w-[80vw]  bg-slate-800 sm:min-h-[100vh] min-h-[100vh] flex flex-col gap-2  justify-center items-center ">
             {postData?.map((post:any)=>(
