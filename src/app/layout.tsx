@@ -5,6 +5,7 @@ import  AuthProvider from './context/AuthProvider'
 const inter = Inter({ subsets: ['latin'] })
 import { Providers } from '@/redux/provider'
 import Navbar from './components/Navbar'
+
 export const metadata: Metadata = {
   title: 'Vaido',
   description: 'Vaido build upon nextjs',

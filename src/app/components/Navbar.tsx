@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import  Image  from "next/image";
 import Menu from '@/public/menu.svg'
+
 export  default function Navbar(){
     const [active,setActive]=useState("");
     const [toggle, setToggle] = useState(false);
@@ -27,29 +28,34 @@ export  default function Navbar(){
     }
     ]
     return(
-        <nav className="flex md:hidden  flex-col gap-2 h-14   sticky  top-0 z-10 bg-black " >
-         <div className='flex w-full p-2  flex-row justify-end items-center'>
-            <div className=" text-2xl text-white">Vaido</div>
+        <nav className="flex   flex-col gap-2 h-14 sticky  w-full top-0 z-10 bg-[#23292f] " >
+         <div className='flex w-full p-2   flex-row justify-between md:justify-around items-center'>
+            <div className=" text-4xl bg-[#0077b5] p-2 rounded-sm w-[40px] h-[40px] flex items-center  justify-center">V</div>
+            <div className="px-5 sm:block hidden ">
+           <Link href="/CreatePost" className="px-2 hover:bg-[#465768] w-auto h-auto p-2 rounded-sm" >Create Post</Link>
+          
+           <Link href="/profile/id" className="px-2  hover:bg-[#465768] w-auto h-auto p-2 rounded-sm">Profile</Link>
+           <Link href="/logout" className="px-2 hover:bg-[#465768] w-auto h-auto p-2 rounded-sm">Logout</Link>
+           </div>
           <div
-           className='pe-5  object-contain flex flex-1 justify-end cursor-pointer items-center'
+
+           className='pe-5 sm:hidden  object-contain flex flex-1 justify-end cursor-pointer items-center  '
            onClick={() => setToggle(!toggle)}
            >
-            {/* <img
-     className=' ps-2  '
-     src={""}
-     /> */} <Image src={Menu} alt="menu" width={30} height={30}/>
+             <Image src={Menu} alt="menu" width={30} height={30}/>
            </div>
+           
 
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            }  absolute top-[55px] p-6 py-2  my-1 min-w-[120px] z-10  rounded-xl  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500   `}
+            }  absolute top-[55px] p-6 py-2  my-1 min-w-[120px] z-10  rounded-xl  bg-[#23292f]   `}
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav) => (
                 <li
                   key={nav.name}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] hover:bg-purple-500 rounded-lg p-2 ${
+                  className={`font-poppins font-medium cursor-pointer text-[16px] hover:bg-[#4d5c6ac9] rounded-lg p-2 ${
                     active === nav.name ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {

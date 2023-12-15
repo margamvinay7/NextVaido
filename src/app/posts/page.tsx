@@ -2,8 +2,7 @@
 import Post from '../post/page'
 import { useEffect, useState } from 'react'
 import { usePostsQuery,useSearchPostsQuery } from '@/redux/services/postApi'
-import Sidebar from '../components/Sidebar'
-import Search from '../Search/page'
+
 import { BsSearch } from "react-icons/bs";
 export default function Posts(){
     const [posts,setPosts]=useState<any>([])
@@ -35,21 +34,35 @@ console.log("postData search",postData)
 
     
     return(
-        <div className='w-[100vw] relative'>
-           <aside className="md:w-[20vw] sm:hidden hidden md:flex  left-0 bg-slate-300 h-[100vh] fixed"><Sidebar/></aside> 
-          {/* // <section><Search/></section>  */}
-         <section className=' flex flex-row md:h-12 w-[100vw] '>
+        <>
+        <div className='w-[100vw] '>
            
-           <input type='text' onChange={(e)=>setSearch(e.target.value)} className='  h-12  border-solid text-center text-black border-slate-900 border-2 rounded-lg w-[90vw] md:w-[70vw] md:absolute md:left-[20vw]' placeholder='Search post by title' />
-           <button className='hover:bg-slate-400 w-[10vw] md:w-[10vw] md:h-12 md:absolute md:right-0' onClick={handleSearch}><BsSearch/></button>
+          {/* // <section><Search/></section>  */}
+         <section className=' flex flex-row md:h-12  bg-black justify-center '>
+           <div className='fixed top-2 sm:left-32 md:left-96 md:w-96 z-10 flex bg-white rounded-sm '>
+           <input type='text' onChange={(e)=>setSearch(e.target.value)} className='  h-10 w-3/4  border-solid text-center  border-2 mr-3 text-black  ' placeholder='Search post by title' />
+           <button className='   md:absolute md:right-0 hover:bg-white rounded-full' onClick={handleSearch}><BsSearch style={{
+                    color: "black",
+                    
+                    padding: 5,
+                    height: 30,
+                    width: 30,
+                    borderRadius: 50,
+                    
+                  }}/></button>
+            </div>
     </section>
-        <section   className=" md:left-[20vw] p-5 w-[100vw] sm:w-[100vw]  relative  md:w-[80vw]  bg-slate-800 sm:min-h-[100vh] min-h-[100vh] flex flex-col gap-2  justify-center items-center ">
+         
+        <section   className="  w-[100vw]   relative py-3  bg-black sm:min-h-[100vh] min-h-[100vh] flex flex-col gap-2  justify-center items-center ">
             {postData?.map((post:any)=>(
                 <Post post={post} key={post._id}/>
 
             ))}
         
         </section>
+        
         </div>
+        
+    </>
     )
 }

@@ -47,44 +47,48 @@ export default function SignupPage() {
 
 
     return (
-       <div className="login ">
-    <div className="flex flex-col outline oultine-white  items-center justify-center h-[70vh] py-2 bg-slate-900 sm:w-[50vw]  w-[90vw] rounded-xl gap-1">
-        <h1 className="text-white">{loading ? "Processing" : "Signup"}</h1>
+       <div className="login  ">
+    <div className="loginform gap-2 ">
+        <h1 className=" login-header">{loading ? "Processing" : "Signup"}</h1>
         <hr />
         
         <input 
-        className="p-2 border text-center border-gray-300 rounded-lg mb-4 placeholder-slate-950 focus:outline-none focus:border-gray-600 text-black"
+        className=" input-button placeholder-sky-800 "
             id="username"
             type="text"
             value={username}
             onChange={(e) => setUsername( e.target.value)}
-            placeholder="username"
+            placeholder="Username"
             />
         
         <input 
-        className="p-2 border text-center placeholder-slate-950 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="input-button placeholder-sky-800"
             id="email"
             type="text"
             value={email}
             onChange={(e) => setEmail( e.target.value)}
-            placeholder="email"
+            placeholder="Email"
             />
-          <div className="w-[60%] mb-1 ">  
-            <FileBase type="file" multiple={false} onDone={({base64}:any)=>setImage(base64)}/>
-            </div>
+            <label  className="input-button   bg-white  flex items-center justify-center"><span className="text-sky-800">Select File</span>
+            <span id="file">
+            <FileBase type="file"  multiple={false} onDone={({base64}:any)=>setImage(base64)}/>
+            </span>
+            </label>
+            
         <input 
-        className="p-2 border text-center placeholder-slate-950 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="input-button placeholder-sky-800"
             id="password"
             type="password"
             value={password}
             onChange={(e) => setPassword( e.target.value)}
             placeholder="password"
             />
+            
             <button
             onClick={onSignup}
-            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none  focus:border-gray-600 text-white">SignUp</button>
-            <Link href="/login" className="text-white">Visit login page</Link>
-            <Link href="/profile" className="text-white">Visit profile page</Link>
+            className="login-button">Submit</button>
+            <div className="flex">Already have account ?<Link href="/login" className="text-black flex  justify-center log ">Login</Link></div>
+            
         </div>
         </div>
         

@@ -54,22 +54,22 @@ export default function LoginPage() {
 
     return (
         <div className="login">
-    <div className="flex flex-col  outline outline-white items-center justify-center bg-slate-900 h-[60vh] sm:w-[50vw] py-2 rounded-xl w-[90vw]">
-        <h1 className="text-white mb-2">{loading ? "Processing" : "Login"}</h1>
+    <div className="loginform gap-2 ">
+        <h1 className="login-header">{loading ? "Processing" : "Login"}</h1>
         <hr />
         
          
         <input 
-        className="p-2 border border-gray-300 rounded-lg text-center placeholder-black mb-4 focus:outline-none placeholder- focus:border-gray-600 text-black "
+        className="input-button placeholder-sky-800 "
             id="email"
             type="text"
             value={user.email}
             onChange={(e) => setUser({...user, email: e.target.value})}
-            placeholder="email"
+            placeholder="Email"
             />
        
         <input 
-        className="p-2 border placeholder-black text-center border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
+        className="input-button placeholder-sky-800 "
             id="password"
             type="password"
             value={user.password}
@@ -78,8 +78,8 @@ export default function LoginPage() {
             />
             <button
             onClick={onLogin}
-            className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-white">Login here</button>
-            <Link href="/signup" className="text-white">Visit Signup page</Link>
+            className="login-button">Login </button>
+            <div className="flex">Create Account ?<Link href="/signup" className="text-black flex  justify-center log ">Sign Up</Link></div>
         </div>
         </div>
     )

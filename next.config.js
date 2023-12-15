@@ -9,16 +9,16 @@ const nextConfig = {
         ignoreDuringBuilds: true,
       },
     images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'localhost:3000',
-                port: '3000',
-                pathname: '/**',
-            },
-        ],
+        // remotePatterns: [
+        //     {
+        //         protocol: 'https',
+                
+        //         port: '*',
+        //         pathname: '/**',
+        //     },
+        // ],
         domains: [
-            'http://localhost:3000/',
+            '*',
           ],
     },
 }

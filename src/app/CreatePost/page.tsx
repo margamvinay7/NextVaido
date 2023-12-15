@@ -63,7 +63,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAddPostMutation } from '@/redux/services/postApi';
 import FileBase from 'react-file-base64';
-import Sidebar from '../components/Sidebar';
+
 import { useRouter } from 'next/navigation';
 import { useSelector } from 'react-redux';
 
@@ -99,28 +99,28 @@ export default function CreatePost() {
 
   return (
     <>
-      <div className="md:w-[20vw] sm:hidden hidden md:flex left-0 bg-slate-300 h-[100vh] fixed">
-        <Sidebar />
-      </div>
+      
 
       <div className="login ">
-        <div className="flex flex-col gap-2 items-center  justify-center h-[70vh] py-2 bg-slate-900  sm:w-[50vw]  w-[90vw] rounded-xl">
-          <h1 className='text-white'>CREATE POST</h1>
+        <div className="loginform">
+          <h1 className='login-header '>CREATE</h1>
           <input
-            className="w-[80%] text-white h-10 rounded-sm placeholder-shown:border-gray-500 placeholder-white bg-black text-center"
+            className="input-button placeholder-sky-800"
             placeholder="Title of post"
             type="text"
             onChange={(e) => setTitle(e.target.value)}
           />
           <textarea
-            className="w-[80%] text-white h-20 rounded-sm placeholder-shown:border-gray-500 placeholder-white bg-black text-center"
+            className="input-button placeholder-sky-800"
             placeholder=" post"
             onChange={(e) => setPost(e.target.value)}
           ></textarea>
-          <div className="w-[80%] flex justify-center flex-col ">
-            <FileBase type="file" multiple={false} onDone={({ base64 }:any) => setImage(base64)} />
-            <button  className="p-2  m-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-white" onClick={onSubmit}>Submit</button>
-          </div>
+          <label  className="input-button   bg-white  flex items-center justify-center"><span className="text-sky-800">Select File</span>
+            <span id="file">
+            <FileBase type="file"  multiple={false} onDone={({base64}:any)=>setImage(base64)}/>
+            </span>
+            </label>
+          <button  className="login-button" onClick={onSubmit}>Submit</button>
         </div>
       </div>
     </>

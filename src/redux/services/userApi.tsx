@@ -5,7 +5,7 @@ import {user} from '@/type'
 export const userApi = createApi({
    
     reducerPath: "userApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "https://vaido.vercel.app/api/" }),
+    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/api/" }),
     tagTypes: ['user'],
     endpoints: (builder) => ({
         
